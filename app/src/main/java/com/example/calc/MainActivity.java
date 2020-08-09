@@ -38,9 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setListener();
 
     }
-
     boolean doubleBackToExitPressedOnce = false;
-
     @Override
     public void onBackPressed() {
 

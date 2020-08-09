@@ -20,7 +20,8 @@
             android:id="@+id/rotate"
             android:layout_marginBottom="20dp"
             android:src="@drawable/ic_baseline_screen_rotation_24"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            android:contentDescription="TODO" />
 
 
 
@@ -57,6 +58,62 @@
         android:weightSum="10"
         android:background="#F3F0F0"
         android:layout_below="@id/lands_calc">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="vertical"
+            android:weightSum="8">
+
+
+            <Button
+                android:id="@+id/eight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#F3F0F0"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:text="@string/eight"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#F3F0F0"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:text="@string/five"
+
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#F3F0F0"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:text="@string/two"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/decimal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#F3F0F0"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:text="@string/dot"
+                android:textSize="25sp" />
+
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_marginStart="10dp"
             android:layout_height="match_parent"
@@ -105,58 +162,6 @@
                 android:id="@+id/zero"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"
 
-                android:background="#F3F0F0"/>
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:weightSum="8"
-            android:layout_margin="0dp"
-            android:orientation="vertical">
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:background="#F3F0F0"
-                android:text="@string/eight"
-                android:id="@+id/eight"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:textSize="25sp" />
-
-            <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:textSize="25sp"
-                android:layout_weight="2"
-                android:text="@string/five"
-                android:id="@+id/five"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-
-                android:background="#F3F0F0"/>
-            <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/two"
-                android:textSize="25sp"
-                android:layout_weight="2"
-                android:id="@+id/two"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:background="#F3F0F0"/>
-
-            <Button
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/dot"
-                android:id="@+id/decimal"
-                android:textSize="25sp"
-                android:layout_weight="2"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:background="#F3F0F0"/>
 
 

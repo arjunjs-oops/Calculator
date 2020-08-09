@@ -260,4 +260,5 @@ public class landscape extends AppCompatActivity implements View.OnClickListener
 
         }
     }
+
 }
