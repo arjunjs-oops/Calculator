@@ -27,15 +27,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_potraite);
         setButtons();
+        setListener();
+
         imageView = findViewById(R.id.rotate);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,landscape.class);
+                String user_val = value.getText().toString();
+                String res = calc.getText().toString();
+                if(res.length()!= 0)
+                    intent.putExtra("Data",res);
+                else
+                intent.putExtra("Data",user_val);
+
                 startActivity(intent);
             }
         });
-        setListener();
+        Bundle result = getIntent().getExtras();
+        if(result!=null){
+            value.setText(result.getString("Data_Land"));
+        }
 
     }
     boolean doubleBackToExitPressedOnce = false;
@@ -183,7 +195,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (length > 0) {
                     value.getText().delete(length - 1, length);
                     calc.setText("");
-                    Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
                 }
                 break;
 

@@ -2,7 +2,6 @@ package com.example.calc;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,11 +15,12 @@ import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class landscape extends AppCompatActivity implements View.OnClickListener {
-    ImageView imageView;
-    Button one, two, three, four, five, six, seven, eight, nine, zero, dot, equals, backspc, div, multi, subtract, addi;
-    Button sin,cos,tan,log,deci,zeroo,pie,exp,lbrace,rbrace,root,pow,mod;
-    TextView calc;
-    EditText value;
+   private   ImageView imageView;
+   private Button one, two, three, four, five, six, seven, eight, nine, zero, dot, equals, backspc, div, multi, subtract, addi;
+   private Button sin,cos,tan,log,deci,zeroo,pie,exp,lbrace,rbrace,root,pow,mod;
+   private TextView calc;
+   private EditText value;
+    private static final String TAG = "landscape";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,35 +29,30 @@ public class landscape extends AppCompatActivity implements View.OnClickListener
         imageView = findViewById(R.id.rotate);
         setButtons();
         setListener();
+
+        Bundle data = getIntent().getExtras();
+        if (data!= null){
+            value.setText(data.getString("Data"));
+        }
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String user_val = value.getText().toString();
+                String res = calc.getText().toString();
                 Intent intent = new Intent(landscape.this,MainActivity.class);
+                if(res.length()!=0)
+                    intent.putExtra("Data_Land",res);
+
+                else
+                intent.putExtra("Data_Land",user_val);
                 startActivity(intent);
+
             }
         });
     }
+
     boolean doubleBackToExitPressedOnce = false;
 
-    @Override
-    public void onBackPressed() {
-
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2000);
-    }
 
 
     private void setButtons() {
@@ -107,6 +102,7 @@ public class landscape extends AppCompatActivity implements View.OnClickListener
         });
 
     }
+
 
     private void setListener() {
         one.setOnClickListener(this);
@@ -234,7 +230,6 @@ public class landscape extends AppCompatActivity implements View.OnClickListener
                 if (length > 0) {
                     value.getText().delete(length - 1, length);
                     calc.setText("");
-                    Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
@@ -243,6 +238,8 @@ public class landscape extends AppCompatActivity implements View.OnClickListener
         }
 
     }
+
+
     private void getSum() {
         // Read the expression
         String txt = value.getText().toString();

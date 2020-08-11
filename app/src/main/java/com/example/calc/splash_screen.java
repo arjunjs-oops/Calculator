@@ -18,12 +18,13 @@ public class splash_screen extends AppCompatActivity{
                     .withTargetActivity(MainActivity.class)
                     .withSplashTimeOut(3500)
                     .withBackgroundResource(android.R.color.background_light)
-                    .withFooterText("Calculator")
-                    .withBeforeLogoText("Learn and Share")
-                    .withLogo(R.drawable.ic_baseline_collections_bookmark_24)
-                    .withAfterLogoText("This is Just A Calculation App");
+                    .withFooterText("Learn and Share")
+                    .withBeforeLogoText("Calculator")
+                    .withLogo(R.mipmap.logo)
+                    .withAfterLogoText("Where 10 multiply 10 yields 101");
             config.getFooterTextView().setTextSize(20);
             config.getBeforeLogoTextView().setTextSize(19);
+            config.getAfterLogoTextView().setTextSize(20);
 
             //finally create the view
             View easySplashScreenView = config.create();
