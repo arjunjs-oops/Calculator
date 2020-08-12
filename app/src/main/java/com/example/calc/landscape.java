@@ -188,7 +188,9 @@ public class landscape extends AppCompatActivity implements View.OnClickListener
             case R.id.piey:
                 value.append(pie.getText());
                 break;
-
+            case R.id.zero:
+                value.append(zeroo.getText());
+                break;
 
             case R.id.expo:
                 value.append(exp.getText());

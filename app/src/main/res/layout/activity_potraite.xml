@@ -212,6 +212,7 @@
                 android:id="@+id/equals"
                 android:text="@string/equals"
                 android:textColor="#3E4FCA"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:textSize="25sp"
                 android:layout_weight="2"/>
 
@@ -231,6 +232,7 @@
                 android:textSize="25sp"
                 android:id="@+id/clear"
                 android:textColor="#3E4FCA"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:textStyle="bold"
                 android:text="C"/>
 
@@ -240,6 +242,7 @@
                 android:layout_width="wrap_content"
                 android:textSize="25sp"
                 android:text="/"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:background="#F3F0F0"
                 android:id="@+id/divide"
                 android:textColor="#3E4FCA"
@@ -254,6 +257,7 @@
                 android:layout_weight="2"
                 android:id="@+id/multiply"
                 android:textColor="#3E4FCA"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:background="#F3F0F0"/>
             <Button
                 android:layout_height="wrap_content"
@@ -264,6 +268,7 @@
                 android:layout_weight="2"
                 android:textStyle="bold"
                 android:textColor="#3E4FCA"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:background="#F3F0F0"/>
 
             <Button
@@ -275,6 +280,7 @@
                 android:background="#F3F0F0"
                 android:textColor="#3E4FCA"
                 android:textStyle="bold"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:layout_weight="2"/>
         </LinearLayout>
 

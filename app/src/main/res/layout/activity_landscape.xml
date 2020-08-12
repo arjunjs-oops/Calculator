@@ -204,6 +204,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:background="#F3F0F0"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:text="@string/add"
                 android:textSize="25sp" />
 
@@ -242,6 +243,7 @@
                 android:layout_weight="2"
                 android:background="#F3F0F0"
                 android:text="*"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:textSize="25sp" />
 
             <Button
@@ -251,6 +253,7 @@
                 android:layout_weight="2"
                 android:background="#F3F0F0"
                 android:text="@string/subract"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:textSize="25sp" />
 
 
