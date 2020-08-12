@@ -12,9 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import net.objecthunter.exp4j.Expression;
-import net.objecthunter.exp4j.ExpressionBuilder;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button one, two, three, four, five, six, seven, eight, nine, zero, dot, equals, backspc, div, multi, subtract, addi;
     Button sin , ln,deci,zeroo;
@@ -33,19 +30,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,landscape.class);
+                Intent intent = new Intent(MainActivity.this, landscape.class);
                 String user_val = value.getText().toString();
                 String res = calc.getText().toString();
-                if(res.length()!= 0)
-                    intent.putExtra("Data",res);
+                if (res.length() != 0)
+                    intent.putExtra("Data", res);
                 else
-                intent.putExtra("Data",user_val);
+                    intent.putExtra("Data", user_val);
 
                 startActivity(intent);
             }
         });
         Bundle result = getIntent().getExtras();
-        if(result!=null){
+        if (result != null) {
             value.setText(result.getString("Data_Land"));
         }
 
@@ -182,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.sin:
                 value.append(sin.getText());
             case R.id.equals:
-                getSum();
+                Sum.getSum(value,calc);
                 break;
             case R.id.addition:
                 if (value.getText() == null) {
@@ -203,21 +200,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-    private void getSum() {
-        // Read the expression
-        String txt = value.getText().toString();
-        // Create an Expression (A class from exp4j library)
 
-        try {
-            Expression expression = new ExpressionBuilder(txt).build();
-            double result = expression.evaluate();
-            calc.setText(String.valueOf(result));
-        } catch (IllegalArgumentException e) {
-            Toast.makeText(this, "Enter The Values", Toast.LENGTH_SHORT).show();
-        } catch (ArithmeticException ex) {
-            // Display an error message
-            calc.setText(ex.getLocalizedMessage());
-
-        }
-    }
 }

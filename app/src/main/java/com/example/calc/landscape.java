@@ -7,12 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import net.objecthunter.exp4j.Expression;
-import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class landscape extends AppCompatActivity implements View.OnClickListener {
    private   ImageView imageView;
@@ -217,7 +213,7 @@ public class landscape extends AppCompatActivity implements View.OnClickListener
                 value.append(multi.getText());
                 break;
             case R.id.equals:
-                getSum();
+                Sum.getSum(value,calc);
                 break;
             case R.id.addition:
                 if (value.getText() == null) {
@@ -235,26 +231,6 @@ public class landscape extends AppCompatActivity implements View.OnClickListener
 
             default:
                 break;
-        }
-
-    }
-
-
-    private void getSum() {
-        // Read the expression
-        String txt = value.getText().toString();
-        // Create an Expression (A class from exp4j library)
-
-        try {
-            Expression expression = new ExpressionBuilder(txt).build();
-            double result = expression.evaluate();
-            calc.setText(String.valueOf(result));
-        } catch (IllegalArgumentException e) {
-            Toast.makeText(this, "Enter The Values", Toast.LENGTH_SHORT).show();
-        } catch (ArithmeticException ex) {
-            // Display an error message
-            calc.setText(ex.getLocalizedMessage());
-
         }
     }
 

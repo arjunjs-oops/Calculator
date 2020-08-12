@@ -16,7 +16,7 @@ public class splash_screen extends AppCompatActivity{
             EasySplashScreen config = new EasySplashScreen(splash_screen.this)
                     .withFullScreen()
                     .withTargetActivity(MainActivity.class)
-                    .withSplashTimeOut(3500)
+                    .withSplashTimeOut(4000)
                     .withBackgroundResource(android.R.color.background_light)
                     .withFooterText("Learn and Share")
                     .withBeforeLogoText("Calculator")
